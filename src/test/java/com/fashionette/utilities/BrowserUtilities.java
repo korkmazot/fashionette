@@ -16,6 +16,12 @@ public class BrowserUtilities {
         WebDriverWait wait = new WebDriverWait(Driver.get(), 15);
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
+
+    public static WebElement waitForVisibility(WebElement element, int timeToWaitInSec) {
+        WebDriverWait wait = new WebDriverWait(Driver.get(), timeToWaitInSec);
+        return wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
     public static void acceptCookies() throws InterruptedException {
         WebElement shadowHost = Driver.get().findElement(By.cssSelector("#usercentrics-root"));
         Object shadowRoot = ((JavascriptExecutor) Driver.get()).executeScript("return arguments[0].shadowRoot", shadowHost);
@@ -24,8 +30,6 @@ public class BrowserUtilities {
         shadowRootElement.setParent((RemoteWebDriver) Driver.get());
         shadowRootElement.setId(id);
         WebElement acceptCookiesButton = shadowRootElement.findElement(By.cssSelector("button[data-testid='uc-accept-all-button']"));
-        //waitToBeClickable(acceptCookiesButton);
-        Thread.sleep(5000);
         acceptCookiesButton.click();
     }
 }

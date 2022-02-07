@@ -17,7 +17,7 @@ public class BasePage {
     @FindBy(xpath = "//div[contains(@class,'flex-container')]//div[1]//div[1]//a[1]//div[1]//div[1]//img[1]")
     public WebElement valentino;
 
-    @FindBy(xpath = "//*[@class=\"product-list__product-brand\"]")
+    @FindBy(xpath = "//a[@itemprop='brand']")
     public WebElement productTitle;
 
     @FindBy(xpath = "//div[@class='btn btn--bigger-icon preventspinner btn-default']//div[@class='btn__content'][normalize-space()='In den Warenkorb']")
@@ -52,6 +52,13 @@ public class BasePage {
 
     @FindBy(xpath = "//span[@class='cart-item--quantity ']")
     public WebElement cartItemQuantity;
+
+    @FindBy(xpath = "//*[@title=\"Einloggen\"]")
+    public WebElement userIcon;
+
+    @FindBy(xpath = "//span[@class=\"icon icon--till\"]")
+    public WebElement cartIcon;
+
 
 
 
