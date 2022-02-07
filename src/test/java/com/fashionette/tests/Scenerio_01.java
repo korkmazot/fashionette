@@ -31,7 +31,8 @@ public class Scenerio_01 extends TestBase {
 
         basePage.bag.click();
         basePage.valentino.click();
-        BrowserUtilities.waitForVisibility(basePage.productTitle,10);
+        BrowserUtilities.waitForPageToLoad(15);
+        Thread.sleep(5000);
         String productTitle = basePage.productTitle.getText();
         basePage.basket.click();
         basePage.userIcon.click();

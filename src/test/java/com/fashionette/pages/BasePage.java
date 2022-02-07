@@ -1,7 +1,5 @@
 package com.fashionette.pages;
 
-//import...
-
 import com.fashionette.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,38 +18,15 @@ public class BasePage {
     @FindBy(xpath = "//a[@itemprop='brand']")
     public WebElement productTitle;
 
-    @FindBy(xpath = "//div[@class='btn btn--bigger-icon preventspinner btn-default']//div[@class='btn__content'][normalize-space()='In den Warenkorb']")
-    public WebElement basket;
-
     @FindBy(xpath = "//div[@class='btn minicart__button minicart-dialog__go-to-cart']//span[contains(text(),'Zum Warenkorb')]")
     public WebElement buyButton;
 
-    @FindBy(xpath = "//button[@id='checkout-start']")
-    public WebElement checkOut;
 
-    @FindBy(xpath = "//input[@name='email']")
-    public WebElement username;
-
-    @FindBy(xpath = "//input[@name='password']")
-    public WebElement password;
-
-    @FindBy(xpath = "//button[normalize-space()='Einloggen']")
-    public WebElement login;
-
-    @FindBy(xpath = "//div[@class='checkout-address row']//button[1]")
-    public WebElement continueButton;
-
-    @FindBy(xpath = "//div[contains(text(),'Eingegebene Rechnungsadresse verwenden')]")
-    public WebElement confirmAddressButton;
-
-    @FindBy(xpath = "//button[@name='PayPal Direct Payment']")
-    public WebElement selectPayPal;
+    @FindBy(xpath = "//div[@class='btn btn--bigger-icon preventspinner btn-default']//div[@class='btn__content'][normalize-space()='In den Warenkorb']")
+    public WebElement basket;
 
     @FindBy(xpath = "//div[@class='cart-item--brand']")
     public WebElement cartItemBrand;
-
-    @FindBy(xpath = "//span[@class='cart-item--quantity ']")
-    public WebElement cartItemQuantity;
 
     @FindBy(xpath = "//*[@title=\"Einloggen\"]")
     public WebElement userIcon;

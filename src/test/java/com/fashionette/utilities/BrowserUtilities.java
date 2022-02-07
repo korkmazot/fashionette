@@ -2,9 +2,11 @@ package com.fashionette.utilities;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -31,5 +33,28 @@ public class BrowserUtilities {
         shadowRootElement.setId(id);
         WebElement acceptCookiesButton = shadowRootElement.findElement(By.cssSelector("button[data-testid='uc-accept-all-button']"));
         acceptCookiesButton.click();
+
     }
-}
+        public static void waitForPageToLoad(long timeOutInSeconds) {
+            ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
+                public Boolean apply(WebDriver driver) {
+                    return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
+                }
+            };
+            try {
+                WebDriverWait wait = new WebDriverWait(Driver.get(), timeOutInSeconds);
+                wait.until(expectation);
+            } catch (Throwable error) {
+                error.printStackTrace();
+            }
+        }
+
+
+    public static int valueConverter(String numberInWord){
+        numberInWord = numberInWord.substring(0, numberInWord.indexOf(" "));
+        int number = Integer.parseInt(numberInWord);
+        return number;
+    }
+
+    }
+
