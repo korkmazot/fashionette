@@ -4,19 +4,11 @@ import com.fashionette.pages.BasePage;
 import com.fashionette.pages.LoginPage;
 import com.fashionette.utilities.BrowserUtilities;
 import com.fashionette.utilities.ConfigurationReader;
-import com.fashionette.utilities.Driver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.Map;
 
 public class Scenerio_01 extends TestBase {
-
 
     @Test
     public void scenerio1() throws InterruptedException {
@@ -39,8 +31,6 @@ public class Scenerio_01 extends TestBase {
 
         Thread.sleep(3000);
 
-       // BrowserUtilities.waitForVisibility(loginPage.username,10);
-        //loginPage.username.click();
         loginPage.username.sendKeys(ConfigurationReader.get("username"));
         loginPage.password.sendKeys(ConfigurationReader.get("password"));
         loginPage.login.click();

@@ -9,7 +9,6 @@ import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.Map;
 
 public class BrowserUtilities {
@@ -33,7 +32,6 @@ public class BrowserUtilities {
         shadowRootElement.setId(id);
         WebElement acceptCookiesButton = shadowRootElement.findElement(By.cssSelector("button[data-testid='uc-accept-all-button']"));
         acceptCookiesButton.click();
-
     }
         public static void waitForPageToLoad(long timeOutInSeconds) {
             ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {

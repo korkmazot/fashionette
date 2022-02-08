@@ -4,9 +4,6 @@ import com.fashionette.pages.BasePage;
 import com.fashionette.pages.LoginPage;
 import com.fashionette.pages.Voucher;
 import com.fashionette.utilities.BrowserUtilities;
-import com.fashionette.utilities.Driver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -59,12 +56,6 @@ public class Scenerio_03 extends TestBase{
         int expected = beforeDiscount + discount;
         Assert.assertTrue(afterDiscount==expected);
 
-
     }
-//
-//    public static int valueConverter(String numberInWord){
-//        numberInWord = numberInWord.substring(0, numberInWord.indexOf(" "));
-//        int number = Integer.parseInt(numberInWord);
-//        return number;
-//    }
+
 }

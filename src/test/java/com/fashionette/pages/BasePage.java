@@ -21,7 +21,6 @@ public class BasePage {
     @FindBy(xpath = "//div[@class='btn minicart__button minicart-dialog__go-to-cart']//span[contains(text(),'Zum Warenkorb')]")
     public WebElement buyButton;
 
-
     @FindBy(xpath = "//div[@class='btn btn--bigger-icon preventspinner btn-default']//div[@class='btn__content'][normalize-space()='In den Warenkorb']")
     public WebElement basket;
 
@@ -33,19 +32,6 @@ public class BasePage {
 
     @FindBy(xpath = "//span[@class=\"icon icon--till\"]")
     public WebElement cartIcon;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

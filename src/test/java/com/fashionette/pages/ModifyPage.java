@@ -17,23 +17,14 @@ public class ModifyPage extends BasePage {
     @FindBy(xpath = "//input[@placeholder='Nachname']")
     public WebElement nachname;
 
-    @FindBy(xpath = "//div[contains(@class,'account--address__action account--address__action--save')]\n")
+    @FindBy(xpath = "//div[contains(@class,'account--address__action account--address__action--save')]")
     public WebElement save;
 
     @FindBy(xpath = "//div[@class='account--personaldata']//div[2]")
     public WebElement edited;
 
-    @FindBy(xpath = "//span[contains(@class,'Mike')]")
+    @FindBy(xpath = "//*[@zipcode-mask='99999']/div[2]")
     public WebElement editedTitle;
-
-
-
-
-
-
-
-
-
 
 
 }

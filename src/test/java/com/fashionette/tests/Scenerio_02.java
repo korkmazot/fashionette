@@ -33,11 +33,14 @@ public class Scenerio_02 extends TestBase {
         modifyPage.vorname.sendKeys("Mike");
         modifyPage.nachname.clear();
         modifyPage.nachname.sendKeys("Smith");
+        Thread.sleep(2000);
         modifyPage.save.click();
+        Thread.sleep(1000);
         modifyPage.edited.click();
 
-        Assert.assertEquals(modifyPage.editedTitle.getText(),"Mike");
         System.out.println(modifyPage.editedTitle.getText());
+        Assert.assertTrue(modifyPage.editedTitle.getText().contains("Mike"),"Verify Modified Name");
+
 
     }
 }
